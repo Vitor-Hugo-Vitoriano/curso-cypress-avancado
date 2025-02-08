@@ -4,7 +4,7 @@ describe('Hacker Stories', () => {
     //   'GET',
     //   '**/search?query=React&page=0'
     // ).as('getStories')
-
+    
     cy.intercept({
       method: 'GET',
       pathname: '**/search',
@@ -217,6 +217,8 @@ describe('Hacker Stories', () => {
 
         cy.visit('/')
         cy.wait('@getNetworkfailure')
+
+        cy.get('p:contains(Something went wrong ...)')
 
     })
 
